@@ -77,7 +77,26 @@ var Me = Developer{
 ```
 
 ---
-layout: left
+layout: center
+hideInToc: true
+---
+
+# Goal
+
+* Learn how to create a linter.
+* Create your own linter and share it. 
+
+<style>
+  h1 {
+    font-size: 3em;
+  }
+  ul {
+    font-size: 2em;
+  }
+</style>
+
+---
+layout: default
 hideInToc: true
 ---
 

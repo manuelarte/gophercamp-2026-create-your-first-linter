@@ -81,7 +81,7 @@ layout: center
 hideInToc: true
 ---
 
-# Goal
+# Goals
 
 * Learn how to create a linter.
 * Create your own linter and share it.
@@ -172,6 +172,12 @@ Code
         font-size: 2em;
     }
 </style>
+
+---
+
+# My First Linter
+
+Do the Uber style guidelines.
 
 ---
 

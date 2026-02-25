@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+          cache-dependency-path: slides/pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm install
       - name: Build

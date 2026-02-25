@@ -53,7 +53,7 @@ hideInToc: true
 
 ---
 layout: image-right
-image: assets/qr-github-manuelarte.jpeg
+image: /qr-github-manuelarte.jpeg
 backgroundSize: 20em 60%
 hideInToc: true
 ---
@@ -271,7 +271,7 @@ transition: slide-up
 
 # Let's
 
-<img src="../assets/gopher.png" alt="go">
+<img src="/gopher.png" alt="go">
 
 ---
 level: 2
@@ -344,7 +344,7 @@ level: 2
 
 # Let's
 
-<img src="../assets/gopher.png" alt="go">
+<img src="/gopher.png" alt="go">
 
 ---
 layout: center
@@ -366,7 +366,7 @@ hideInToc: true
 ---
 hideInToc: true
 layout: image
-image: ./assets/q_a.jpeg
+image: /q_a.jpeg
 backgroundSize: contain
 ---
 

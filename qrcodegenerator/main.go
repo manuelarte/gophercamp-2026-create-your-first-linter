@@ -20,7 +20,7 @@ func createQRCode(url string, filename string) {
 		return
 	}
 
-	w, err := standard.New(fmt.Sprintf("../slides/assets/%s", filename))
+	w, err := standard.New(fmt.Sprintf("../slides/public/%s", filename))
 	if err != nil {
 		fmt.Printf("standard.New failed: %v", err)
 		return

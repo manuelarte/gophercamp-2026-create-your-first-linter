@@ -229,6 +229,7 @@ transition: slide-up
 ---
 layout: two-cols-header
 level: 2
+transition: slide-up
 ---
 
 # My First Linter
@@ -255,11 +256,38 @@ const errNotFound = "not found"
 ```go
 const _myConstant = "myConstant"
 const errNotFound = "not found"
-```  
+```
 
 <style>
 .two-cols-header {
   column-gap: 20px;
+}
+</style>
+
+---
+level: 2
+transition: slide-up
+---
+
+# Let's
+
+<img src="../assets/gopher.png" alt="go">
+
+---
+level: 2
+layout: center
+transition: slide-up
+---
+
+# Comments
+
+- Stylistic linters helps to reduce cognitive load.
+- Be consistent.
+
+
+<style>
+ul {
+  font-size: 2em;
 }
 </style>
 

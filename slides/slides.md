@@ -235,7 +235,9 @@ level: 2
                        
 ## [Prefix unexported globals with '`_`' ](https://github.com/uber-go/guide/blob/master/style.md#prefix-unexported-globals-with-_)
 
-<br>         
+<br>
+
+Prefix unexported top-level vars and consts with _ to make it clear when they are used that they are global symbols.
 
 ::left::
 
@@ -258,6 +260,9 @@ const errNotFound = "not found"
 <style>
 .two-cols-header {
   column-gap: 20px;
+}
+.slidev-code, pre code, pre {
+  font-size: 1.1em !important;
 }
 </style>
 

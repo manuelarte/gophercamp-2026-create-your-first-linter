@@ -152,6 +152,7 @@ User --> App
 ---
 layout: two-cols
 level: 2
+transition: slide-up
 ---
 
 # Tool Analyzer
@@ -177,10 +178,88 @@ Code
 </style>
 
 ---
+level: 2
+---
+
+# AST Example
+
+```plantuml
+@startwbs
+skinparam backgroundColor transparent
+skinparam monochrome reverse
+!option handwritten true
+
+* ast.File
+** ast.GenDecl
+*** ast.ImportSpec
+**** ast.BasicLit
+** ast.GenDecl
+*** ast.ValueSpec
+**** ast.Ident
+**** ast.BasicLit
+** ast.GenDecl
+*** ast.TypeSpec
+*** ast.StructType
+**** ast.FieldList
+***** ast.Field
+***** ast.Field
+** ast.FuncDecl
+*** ast.FuncType
+*** ast.FieldList
+**** ast.Field
+**** ast.Field
+** ...
+@endwbs
+```
+
+<!-- Footer -->
+
+<div class="absolute left-30px bottom-30px">
+  <a target="_blank" href="https://github.com/manuelarte/gophercamp-2026-create-your-first-linter/blob/main/astexample/testdata/src/simple/simple.go">File to test</a>
+</div>
+
+
+---
+layout: section
+transition: slide-up
+---
 
 # My First Linter
 
-Do the Uber style guidelines.
+---
+layout: two-cols-header
+level: 2
+---
+
+# My First Linter
+                       
+## [Prefix unexported globals with '`_`' ](https://github.com/uber-go/guide/blob/master/style.md#prefix-unexported-globals-with-_)
+
+<br>         
+
+::left::
+
+❌ Bad        
+
+```go
+const myConstant = "myConstant"
+const errNotFound = "not found"
+```
+
+::right::
+
+✅ Good     
+
+```go
+const _myConstant = "myConstant"
+const errNotFound = "not found"
+```  
+
+<style>
+.two-cols-header {
+  column-gap: 20px;
+}
+</style>
 
 ---
 

@@ -94,15 +94,6 @@ hideInToc: true
 </style>
 
 ---
-layout: default
-hideInToc: true
----
-
-# Table of contents
-
-<Toc text-2xl minDepth="1" maxDepth="1" />
-
----
 layout: two-cols
 transition: slide-up
 ---
@@ -168,8 +159,11 @@ transition: slide-up
 
 ::right::
 
-Code
+<div v-click>
+
 <<< @/snippets/run.go#snippet
+
+</div>
 
 <style>
     ul {
@@ -215,7 +209,7 @@ skinparam monochrome reverse
 <!-- Footer -->
 
 <div class="absolute left-30px bottom-30px">
-  <a target="_blank" href="https://github.com/manuelarte/gophercamp-2026-create-your-first-linter/blob/main/astexample/testdata/src/simple/simple.go">File to test</a>
+  <a target="_blank" href="https://github.com/manuelarte/gophercamp-2026-create-your-first-linter/blob/main/astexample/testdata/src/simple/main.go">File to test</a>
 </div>
 
 

@@ -8,9 +8,9 @@ import (
 )
 
 func main() {
-	createQRCode("https://manuelarte.github.io/presentation-create-your-first-linter", "qr-slides.jpeg")
+	createQRCode("https://manuelarte.github.io/gophercamp-2026-create-your-first-linter", "qr-slides.jpeg")
 	createQRCode("https://github.com/manuelarte", "qr-github-manuelarte.jpeg")
-	createQRCode("https://github.com/manuelarte/presentation-create-your-first-linter", "qr-github-manuelarte-presentation-create-your-first-linter.jpeg")
+	createQRCode("https://github.com/manuelarte/gophercamp-2026-create-your-first-linter", "qr-github-manuelarte-gophercamp-2026-create-your-first-linter.jpeg")
 }
 
 func createQRCode(url string, filename string) {

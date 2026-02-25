@@ -22,7 +22,7 @@ transition: slide-left
 mdc: true
 # duration of the presentation
 duration: 35min
-
+hideInToc: true
 ---
 
 # Create Your First Linter
@@ -336,7 +336,7 @@ transition: slide-up
 - Custom golangci-lint binary
 - Custom linter added to that binary
 
-[Example](https://github.com/manuelarte/presentation-create-your-first-linter/tree/main/custom-plugin)
+[Example](https://github.com/manuelarte/gophercamp-2026-create-your-first-linter/tree/main/custom-plugin)
 
 ---
 level: 2

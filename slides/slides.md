@@ -261,9 +261,6 @@ const errNotFound = "not found"
 .two-cols-header {
   column-gap: 20px;
 }
-.slidev-code, pre code, pre {
-  font-size: 1.1em !important;
-}
 </style>
 
 ---

@@ -32,6 +32,7 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+          cache-dependency-path: slides/pnpm-lock.yaml
       - name: Install dependencies
         run: pnpm install
       - name: Build
@@ -41,7 +42,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './dist'
+          path: './slides/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

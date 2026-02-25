@@ -83,7 +83,8 @@ hideInToc: true
 
 # Goals
 
-* Learn how to create a linter.
+* Learn and create a linter.
+* Integrate it with golangci-lint as a plugin.
 * Create your own linter and share it.
 
 <style>
@@ -103,6 +104,7 @@ hideInToc: true
 
 ---
 layout: two-cols
+transition: slide-up
 ---
 
 # Golangci-lint
@@ -149,6 +151,7 @@ User --> App
 
 ---
 layout: two-cols
+level: 2
 ---
 
 # Tool Analyzer

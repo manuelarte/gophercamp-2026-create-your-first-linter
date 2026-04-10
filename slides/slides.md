@@ -360,7 +360,7 @@ hideInToc: true
 ---
 hideInToc: true
 layout: image
-image: /q_a.jpeg
+image: /q_a.png
 backgroundSize: contain
 ---
 

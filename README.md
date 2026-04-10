@@ -31,7 +31,7 @@ cd astexample && make t
 
 ### Unexported Constants Check
 
-Exercise to implement Uber style guideline [Prefix Unerxported Globals with _](https://github.com/uber-go/guide/blob/master/style.md#prefix-unexported-globals-with-_).
+Exercise to implement Uber style guideline [Prefix Unexported Globals with _](https://github.com/uber-go/guide/blob/master/style.md#prefix-unexported-globals-with-_).
 
 <table>
 <thead><tr><th>Bad</th><th>Good</th></tr></thead>

@@ -20,8 +20,7 @@ format-code: tidy ## Format go code and run the fixer, alias: fmt
 	golangci-lint run --fix ./...
 .PHONY: fmt format-code
 
-r: ## Run, alias: r
-	 go run .
+r: run ## Run, alias: r
 run: r
-	 go run .
+	 go run . ./testdata/src/simple/main.go
 .PHONY: r run

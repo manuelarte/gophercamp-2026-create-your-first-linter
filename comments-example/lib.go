@@ -6,10 +6,10 @@ type NameParser struct {
 }
 
 func (n NameParser) Parse(fullName string) ParsedName {
-	splitted := strings.Split(fullName, " ")
+	split := strings.Split(fullName, " ")
 	return ParsedName{
-		Name:    splitted[0],
-		Surname: strings.Join(splitted[1:], " "),
+		Name:    split[0],
+		Surname: strings.Join(split[1:], " "),
 	}
 }
 

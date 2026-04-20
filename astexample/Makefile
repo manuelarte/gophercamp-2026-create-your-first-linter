@@ -21,6 +21,6 @@ format-code: tidy ## Format go code and run the fixer, alias: fmt
 .PHONY: fmt format-code
 
 r: run ## Run, alias: r
-run: r
+run:
 	 go run . ./testdata/src/simple/main.go
 .PHONY: r run

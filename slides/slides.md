@@ -60,7 +60,7 @@ hideInToc: true
 
 # About Me
 
-```go [me.go] {2|all} twoslash
+```go [me.go] {2|all}
 var Me = Developer{
 	Name: "Manuel Doncel Martos",
 	Skills: [][]string {
@@ -283,6 +283,107 @@ transition: slide-up
 ul {
   font-size: 2em;
 }
+</style>
+
+---
+level: 2
+layout: two-cols-header
+transition: slide-up
+---
+
+# Example of PR
+
+::left::
+
+```go
+package nameparser
+
+func TestNameParser_Parse(t *testing.T) {
+	for _, test := range []struct {
+		name     string
+		input    string
+		expected ParsedName
+	}{
+		{
+			name:  "Spanish name",
+			input: "Manuel Doncel Martos",
+			expected: ParsedName{
+				Name:    "Manuel", Surname: "Doncel Martos",
+			},
+		},
+		{
+			name:  "English name",
+			input: "John Doe",
+			expected: ParsedName{
+				Name:    "John", Surname: "Doe",
+			},
+		},
+	}
+    ...
+}
+```
+
+::right::
+
+```go
+t.Run(test.name, func(t *testing.T) {
+			p := NameParser{}
+			result := p.Parse(test.input)
+
+			if diff := cmp.Diff(test.expected, result); diff != "" {
+				t.Fatalf("unexpected result: %s", diff)
+			}
+})
+```
+
+<style>
+    .slidev-code, pre code, pre {
+          font-size: 12px !important;
+    }
+    .two-cols-header {
+        column-gap: 20px; /* Adjust the gap size as needed */
+    }
+</style>
+
+---
+level: 2
+layout: center
+---
+
+# Commented PR
+
+```go {all|2,12|4-10|14|6,15|17|18|7-9|all}{lines:true}
+func TestNameParser_Parse(t *testing.T) {
+	t.Parallel()
+
+	tests := map[string]struct {
+		input string
+		want  ParsedName
+	}{
+		... // this is the important part!
+	}
+	for name, test := range tests {
+		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
+			p := Parser{}
+			got := p.Parse(test.input)
+
+			if diff := cmp.Diff(got, test.want); diff != "" {
+				t.Errorf("Parse(%q) = %v, diff %v", test.input, got, diff)
+			}
+		})
+	}
+}
+```
+
+<style>
+    .slidev-code, pre code, pre {
+          font-size: 12px !important;
+    }
+    .two-cols-header {
+        column-gap: 20px; /* Adjust the gap size as needed */
+    }
 </style>
 
 ---

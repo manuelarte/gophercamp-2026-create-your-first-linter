@@ -55,13 +55,39 @@ func newUnexportedConstantsCheckDiag(i *ast.Ident) analysis.Diagnostic {
 		/* TODO(manuelarte): add later
 		SuggestedFixes: []analysis.SuggestedFix{
 			{
-				Message: "unexported constant %q should be prefixed with _",
+				Message: msg,
 				TextEdits: []analysis.TextEdit{
 					{
 						Pos: i.Pos(),
 						End: i.End(),
 						// TODO(manuelarte): Can someone see the problem of fixing it?
 						NewText: fmt.Appendf(nil, "_%s", i.Name),
+					},
+				},
+			},
+		},
+		*/
+	}
+}
+
+//nolint:unused // to be used later
+func newPrefixedErrConsCheckDiag(i *ast.Ident) analysis.Diagnostic {
+	msg := fmt.Sprintf("unexported err constant %q should not be prefixed with _",
+		i.Name)
+
+	return analysis.Diagnostic{
+		Pos:     i.Pos(),
+		End:     i.End(),
+		Message: msg,
+		/* TODO(manuelarte): add later
+		SuggestedFixes: []analysis.SuggestedFix{
+			{
+				Message: msg,
+				TextEdits: []analysis.TextEdit{
+					{
+						Pos: i.Pos(),
+						End: i.End(),
+						NewText: fmt.Appendf(nil, "%s", i.Name[1:]),
 					},
 				},
 			},

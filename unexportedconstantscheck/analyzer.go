@@ -6,7 +6,6 @@ import (
 
 	"golang.org/x/tools/go/analysis"
 	"golang.org/x/tools/go/analysis/passes/inspect"
-	"golang.org/x/tools/go/ast/inspector"
 )
 
 func NewAnalyzer() *analysis.Analyzer {
@@ -19,25 +18,25 @@ func NewAnalyzer() *analysis.Analyzer {
 }
 
 func run(pass *analysis.Pass) (any, error) {
-	insp, found := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
-	if !found {
-		//nolint:nilnil // impossible case.
-		return nil, nil
-	}
+	for _, file := range pass.Files {
+		for _, decl := range file.Decls {
+			genDecl, isGenDecl := decl.(*ast.GenDecl)
+			if !isGenDecl {
+				continue
+			}
 
-	// We are only interested in ValueSpec nodes.
-	nodeFilter := []ast.Node{
-		(*ast.ValueSpec)(nil),
-	}
-
-	insp.Preorder(nodeFilter, func(n ast.Node) {
-		if valueSpec, ok := n.(*ast.ValueSpec); ok {
-			// TODO(manuelarte): to be done
-			//nolint:forbidigo // remove later
-			fmt.Printf("%+v\n", valueSpec)
-			// End TODO(manuelarte)
+			for _, spec := range genDecl.Specs {
+				valueSpec, isValueSpec := spec.(*ast.ValueSpec)
+				if !isValueSpec {
+					continue
+				}
+				// TODO(manuelarte): to be done
+				//nolint:forbidigo // remove later
+				fmt.Printf("%+v\n", valueSpec)
+				// End TODO(manuelarte)
+			}
 		}
-	})
+	}
 
 	//nolint:nilnil //any, error
 	return nil, nil

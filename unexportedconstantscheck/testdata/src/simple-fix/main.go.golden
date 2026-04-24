@@ -6,6 +6,8 @@ const Rate = 0
 
 const errNotFound = "not found"
 
+const errNotFound = "not found"
+
 const (
 	_group = "group" // want `unexported constant "group" should be prefixed with _`
 	Of = "Of"

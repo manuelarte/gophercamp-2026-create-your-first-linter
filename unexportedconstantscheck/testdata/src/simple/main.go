@@ -10,6 +10,7 @@ const (
 	group        = "group" // want `unexported constant "group" should be prefixed with _`
 	Of           = "Of"
 	errConstants = "error"
+	_yeah        = "yeah"
 )
 
 func aFunction(input int) int {

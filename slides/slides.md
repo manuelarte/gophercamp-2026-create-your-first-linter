@@ -352,7 +352,8 @@ layout: center
 
 # Commented PR
 
-```go {all|2,12|4-10|14|6,15|17|18|7-9|all}{lines:true}
+````md magic-move
+```go {all|2,12|4-10|14|6,15|17|18|all}{lines:true}
 func TestNameParser_Parse(t *testing.T) {
 	t.Parallel()
 
@@ -360,7 +361,7 @@ func TestNameParser_Parse(t *testing.T) {
 		input string
 		want  ParsedName
 	}{
-		... // this is the important part!
+		... // testcases
 	}
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
@@ -376,7 +377,31 @@ func TestNameParser_Parse(t *testing.T) {
 	}
 }
 ```
+```go {7-9}{lines:true}
+func TestNameParser_Parse(t *testing.T) {
+	t.Parallel()
 
+	tests := map[string]struct {
+		input string
+		want  ParsedName
+	}{
+		... // ! This is the important!
+	}
+	for name, test := range tests {
+		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+
+			p := Parser{}
+			got := p.Parse(test.input)
+
+			if diff := cmp.Diff(got, test.want); diff != "" {
+				t.Errorf("Parse(%q) = %v, diff %v", test.input, got, diff)
+			}
+		})
+	}
+}
+```
+````
 <style>
     .slidev-code, pre code, pre {
           font-size: 12px !important;
